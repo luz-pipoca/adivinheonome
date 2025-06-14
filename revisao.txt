@@ -1,0 +1,19 @@
+1. Literais são notações para representar alguns valores fixos no código. Python tem vários tipos de literais - por exemplo, um literal pode ser um número (literais numéricos, por exemplo, 123) ou uma string (literais de string, por exemplo, "Eu sou um literal".).
+
+2. O sistema binário é um sistema de números que emprega 2 como base. Portanto, um número binário é composto de 0s e 1s apenas, por exemplo, 1010 é 10 em decimal.
+
+Os sistemas de numeração octal e hexadecimal, da mesma forma, empregam 8 e 16 como suas bases respectivamente. O sistema hexadecimal usa os números decimais e seis letras extras.
+3. Inteiros (ou simplesmente ints) são um dos tipos numéricos compatíveis com o Python. São números escritos sem um componente fracionário, por exemplo, 256 ou -1 (números inteiros negativos).
+
+4. Ponto flutuante (ou simplesmente float) são outro dos tipos numéricos compatíveis com o Python. São números que contêm (ou são capazes de conter) um componente fracionário, por exemplo, 1.27.
+
+5. Para codificar um apóstrofo ou uma aspas dentro de uma string, você pode usar o caracter de escape, por exemplo, 'I\'m happy.' ou abrir e fechar a string usando um conjunto oposto de símbolos aos que você deseja codificar, por exemplo, "I'm happy." para codificar um apóstrofo e 'Ele disse "Python", não "typhoon"' para codificar uma aspas (dupla).
+
+6. Valores booleanos são os dois objetos constantes True e False usados para representar valores de verdade (em contextos numéricos, 1 é True, enquanto 0 é False.
+
+
+
+
+Extra  
+
+Há mais um literal especial usado em Python: o literal None. Esse literal é um objeto NoneType e é usado para representar a ausência de um valor. Vamos contar mais sobre isso em breve.
