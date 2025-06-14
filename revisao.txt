@@ -17,3 +17,7 @@ Os sistemas de numeração octal e hexadecimal, da mesma forma, empregam 8 e 16 
 Extra  
 
 Há mais um literal especial usado em Python: o literal None. Esse literal é um objeto NoneType e é usado para representar a ausência de um valor. Vamos contar mais sobre isso em breve.
+
+###############################################################
+{"nome": "Luz", "pontuacao":18}
+{"nome": "Marjorye", "pontuacao": 15}
