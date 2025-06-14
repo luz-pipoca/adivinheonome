@@ -8,9 +8,6 @@ INICIO = 1
  
 DIFICULDADE =  2
 
-
-
-
 # aqui temos a configuraçao de tela do jogo.
 
 screen = pygame.display.set_mode((1000, 800))
