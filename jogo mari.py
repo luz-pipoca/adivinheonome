@@ -17,21 +17,21 @@ pygame.display.set_caption("Botão Personalizado")
 
 gerente = pygame_gui.UIManager((1000, 800), "theme.json")
 
-botao_personalizado = pygame_gui.elements.UIButton(
+botao_jogar = pygame_gui.elements.UIButton(
     relative_rect=pygame.Rect((410, 280), (180, 50)),
     text = 'JOGAR',
     manager = gerente,
     object_id = "#botao_personalizado"
 )
 
-botao_personalizado = pygame_gui.elements.UIButton(
+botao_dificuldade = pygame_gui.elements.UIButton(
     relative_rect=pygame.Rect((410, 380), (180, 50)),
     text ='DIFICULDADE',
     manager = gerente,
     object_id ="#botao_personalizado"
 )
 
-botao_personalizado = pygame_gui.elements.UIButton(
+botao_opcoes = pygame_gui.elements.UIButton(
     relative_rect=pygame.Rect((410, 480), (180, 50)),
     text ='OPÇOES',
     manager = gerente,
@@ -49,8 +49,14 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
-            if event.ui_element == botao_personalizado:
+            if event.ui_element == botao_jogar:
+                estado = JOGAR
+            elif event.ui_element == botao_dificuldade:
                 estado = DIFICULDADE
+            elif event.ui_element == botao_opcoes:
+                estado = OPCOES
+            
+
     if estado == INICIO: 
         gerente.update(1 / 60)
         gerente.draw_ui(screen)
