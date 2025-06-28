@@ -1,26 +1,72 @@
 import pygame
-from controllers.game_controller import iniciar_jogo
+from views.componentes import desenhar_botao
 
-def abrir_tela():
-    screen = pygame.display.set_mode((800, 1000))
-    pygame.display.set_caption("Adivinhe o Nome")
+def desenhar_tela_inicio(
+  tela, fontes, textos, cores, 
+  input_ativo, caixa_texto, nome_jogador,
+  img_sair
 
-    rodando = True
-    fonte = pygame.font.SysFont("Cursive", 48)
-    while rodando:
-        screen.fill((255, 255, 255))
-        titulo = fonte.render("Escolha a dificuldade: 1- Fácil, 2- Médio, 3- Difícil", True, (0, 0, 0))
+):
+    
+    fonte_media = fontes["media"]
+    fonte_grande = fontes["grande"]
+    fonte_titulo = fontes["titulo"]
 
-        for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
-                rodando = False
-            if event.type == pygame.KEYDOWN:
-                if evento.key ==pygame.K_1:
-                    iniciar_jogo("facil")
-                elif evento.key == pygame.K_2:
-                    iniciar_jogo("medio")
-                elif evento.key == pygame.K_3:
-                    iniciar_jogo("dificil")
-                rodando = False
-        
-        pygame.display.flip()
+    AZUL  = cores["AZUL"]
+    BRANCO = cores["BRANCO"]
+    ROSA = cores["ROSA"]
+    ROSA_CLARO = cores["ROSA_CLARO"]
+    ROXO = cores["ROXO"]
+    CINZA = cores["CINZA"]
+    ROXO_FORTE = cores["ROXO_FORTE"]
+
+    LARGURA, ALTURA = tela.get_size()
+
+    #fundo azul
+    tela.fill(AZUL)
+
+    titulo = fonte_titulo.render(textos["titulo"], True, BRANCO)
+
+    #desenhar o retangulo rosa ####talvez eu tire####
+    titulo_rect = pygame.draw.rect(
+        tela, ROSA,
+        (LARGURA // 2 - titulo.get_width()//2 -20, 80,
+         titulo.get_width() + 40, titulo.get_height() + 40),
+         border_radius = 20
+    )
+
+    #desenhar/escrever o título
+    tela.blit(titulo,(LARGURA//2 - titulo.get_width()//2, 100))
+
+
+    #retangulo do input
+    pygame.draw.rect(
+        tela, BRANCO if input_ativo else ROXO_FORTE,
+        caixa_texto, 0, border_radius=15
+)
+    pygame.draw.rect(tela, CINZA, caixa_texto, 3, border_radius=15)
+    texto_nome = fonte_media.render(textos["digite_nome"], True, CINZA)
+    tela.blit(texto_nome, (caixa_texto.x, caixa_texto.y - 40))
+
+    texto_input = fonte_media.render(nome_jogador, True, CINZA)
+    tela.blit(texto_input, (caixa_texto.x + 10, caixa_texto.y + 15))
+
+    #botao de jogar yay
+    texto_botao = fonte_grande.render(textos["coemcar"], True, BRANCO)
+    largura_botao = max(288, texto_botao.get_width() + 60)
+    botao_inicio_rect = pygame.Rect(
+        LARGURA // 2 - largura_botao // 2, ALTURA // 2 + 70, largura_botao, 70
+    )
+
+    mouse_pos = pygame.mouse.get_pos()
+    cor_botao = ROSA if botao_inicio_rect.collidepoint(mouse_pos) else ROXO
+
+    desenhar_botao(
+        tela,
+        botao_inicio_rect,
+        texto_botao,
+        fonte_grande,
+        BRANCO,
+        border_radius = 20
+    )
+

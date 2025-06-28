@@ -1,5 +1,5 @@
 import random
-def carregar_perguntas(difiuldade):
+def carregar_perguntas(dificuldade):
     if dificuldade == "facil":
         arquivo = "questions_facil.py"
     elif dificuldade == "normal":
