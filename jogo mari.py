@@ -1,4 +1,7 @@
 import pygame
+from assets.questions_facil import perguntas
+from assets.questions_normal import perguntas
+from assets.questions_dificil import perguntas
 
 pygame.init()
 
