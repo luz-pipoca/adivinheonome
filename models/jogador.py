@@ -14,7 +14,7 @@ class Jogador:
 
     def adicionar_pontuacao(self):
         pontos = {"facil": 10, "normal": 20, "dificil": 35} [self.dificuldade]
-        self.pontuacao += valor
+        self.pontuacao += pontos
 
     def registrar_acerto(self):
         self.acertos_seguidos += 1
